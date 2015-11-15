@@ -13,7 +13,7 @@ class CodeQR{
 	private $Text =  null;
 	/* default UTF8 */
 	/* ISO-8859-1 , Shift_JIS , UTF-8 */
-	private $Encoding="UTF8";
+	private $Encoding="UTF-8";
 	/*  Google Api Url */
 	/* Required HTTPS Connection */
 	private $RootURL="https://chart.googleapis.com/chart?";
@@ -21,7 +21,7 @@ class CodeQR{
 	private $Query=array();
 	
 	/*Construct CodeQR Class */
-	function __construct($encoding){
+	function __construct($encoding='UTF-8'){
 		$this->Encoding=$encoding;
 	}
     /* Serialize Array */
@@ -33,7 +33,7 @@ class CodeQR{
 		$this->RootURL=$this->RootURL.http_build_query($Query);
 	}
 	/* Call getQRCode */
-	function Draw($text,$size){
+	function Draw($text,$size=100){
 	   $this->Text=$text;
        $this->Size=$size;
        $this->Post();
